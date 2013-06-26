@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MSD.DotNet.Patterns.TestableCodePatterns.UnitTests")]
+[assembly: AssemblyTitle("MSD.DotNet.Patterns.TestableCodePatterns")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MSD.DotNet.Patterns.TestableCodePatterns.UnitTests")]
-[assembly: AssemblyCopyright("Copyright ©  2013")]
+[assembly: AssemblyProduct("MSD.DotNet.Patterns.TestableCodePatterns")]
+[assembly: AssemblyCopyright("Copyright © Marc Duiker 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9a5a0560-44ad-47de-9081-46797cf533c9")]
+[assembly: Guid("1b09f14f-ddd6-4e5f-a925-20ed0c69929c")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -7,8 +7,8 @@
     <ProjectGuid>{E0017875-F06A-4EA8-8609-1823A0517CBD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MSD.DotNet.Patterns</RootNamespace>
-    <AssemblyName>MSD.DotNet.Patterns</AssemblyName>
+    <RootNamespace>MSD.DotNet.Patterns.TestableCodeRefactoring</RootNamespace>
+    <AssemblyName>MSD.DotNet.Patterns.TestableCodeRefactoring</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,7 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExtractAndOverride\CalculatorWithStaticLogger.cs" />
+    <Compile Include="ExtractAndOverride\Calculator.cs" />
+    <Compile Include="FakingWithInterfaces\Calculator.cs" />
+    <Compile Include="FakingWithInterfaces\ILogger.cs" />
+    <Compile Include="FakingWithInterfaces\Logger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ExtractAndOverride\StaticLogger.cs" />
   </ItemGroup>

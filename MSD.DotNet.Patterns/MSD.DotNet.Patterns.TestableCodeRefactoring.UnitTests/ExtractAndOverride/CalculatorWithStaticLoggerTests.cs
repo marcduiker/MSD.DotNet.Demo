@@ -1,15 +1,17 @@
 ﻿namespace MSD.DotNet.Patterns.TestableCodePatterns.UnitTests.ExtractAndOverride
 {
-    using MSD.DotNet.Patterns.TestableCodePatterns.ExtractAndOverride;
     using NUnit.Framework;
 
-    public class CalculatorWithStaticLoggerTests
+    /// <summary>
+    /// Class with unit tests for the Calculator which uses the StaticLogger.
+    /// </summary>
+    public class CalculatorTests
     {
         [Test]
         public void Add_SingleNumber_ReturnsTheSameNumber()
         {
             // Arrange
-            var calculator = new TestableCalculatorWithStaticLogger();
+            var calculator = GetTestableCalculator();
 
             // Act
             calculator.Add(1);
@@ -22,7 +24,7 @@
         public void Add_TwoNumbers_ReturnsTheSumOfTheNumbers()
         {
             // Arrange
-            var calculator = new TestableCalculatorWithStaticLogger();
+            var calculator = GetTestableCalculator();
 
             // Act
             calculator.Add(1);
@@ -36,7 +38,7 @@
         public void Substract_SinglePositiveNumber_ReturnsTheNegativeOfTheNumber()
         {
             // Arrange
-            var calculator = new TestableCalculatorWithStaticLogger();
+            var calculator = GetTestableCalculator();
 
             // Act
             calculator.Substract(1);
@@ -49,7 +51,7 @@
         public void Substract_TwoNumbers_ReturnsTheDifferenceBetweenTheNumbers()
         {
             // Arrange
-            var calculator = new TestableCalculatorWithStaticLogger();
+            var calculator = GetTestableCalculator();
 
             // Act
             calculator.Add(3);
@@ -63,7 +65,7 @@
         public void Clear_AfterCalculation_ReturnsZero()
         {
             // Arrange
-            var calculator = new TestableCalculatorWithStaticLogger();
+            var calculator = GetTestableCalculator();
 
             // Act
             calculator.Add(1);
@@ -74,20 +76,9 @@
             Assert.AreEqual(0d, calculator.Result);
         }
 
-        /// <summary>
-        /// A testable class of the CalculatorWithStaticLogger which overrides the call to the static logger component.
-        /// This class is used in the unit tests instead of the CalculatorWithStaticLogger class.
-        /// </summary>
-        internal class TestableCalculatorWithStaticLogger : CalculatorWithStaticLogger
+        private TestableCalculator GetTestableCalculator()
         {
-            /// <summary>
-            /// Call to StaticLogger is overridden to avoid a depency on the logger class.
-            /// </summary>
-            /// <param name="message"></param>
-            protected override void CallStaticLogger(string message)
-            {
-                // Do nothing.
-            }
+            return new TestableCalculator();
         }
     }
 }

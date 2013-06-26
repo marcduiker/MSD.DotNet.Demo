@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSD.DotNet.Patterns.TestableCodePatterns", "MSD.DotNet.Patterns\MSD.DotNet.Patterns.TestableCodePatterns.csproj", "{E0017875-F06A-4EA8-8609-1823A0517CBD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSD.DotNet.Patterns.TestableCodeRefactoring", "MSD.DotNet.Patterns.TestableCodeRefactoring\MSD.DotNet.Patterns.TestableCodeRefactoring.csproj", "{E0017875-F06A-4EA8-8609-1823A0517CBD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{69A5433A-873F-499A-B913-640622F31CC6}"
 	ProjectSection(SolutionItems) = preProject
@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{69A543
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSD.DotNet.Patterns.TestableCodePatterns.UnitTests", "MSD.DotNet.Patterns.TestableCodePatterns.UnitTests\MSD.DotNet.Patterns.TestableCodePatterns.UnitTests.csproj", "{D1F35C3F-D7C2-4DD6-92CC-8A37B3882396}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests", "MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests\MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests.csproj", "{D1F35C3F-D7C2-4DD6-92CC-8A37B3882396}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

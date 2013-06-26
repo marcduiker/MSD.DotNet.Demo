@@ -1,6 +1,9 @@
 ﻿namespace MSD.DotNet.Patterns.TestableCodePatterns.ExtractAndOverride
 {
-    public class CalculatorWithStaticLogger
+    /// <summary>
+    /// Calculator class which uses a static Logger class inside a protected virtual method.
+    /// </summary>
+    public class Calculator
     {
         private decimal _result;
         public decimal Result
@@ -11,13 +14,13 @@
 
         public void Add(decimal value)
         {
-            CallStaticLogger(string.Format("Adding {0} to {1}.", value, _result));
+            WriteToStaticLogger(string.Format("Adding {0} to {1}.", value, _result));
             _result += value;
         }
 
         public void Substract(decimal value)
         {
-            CallStaticLogger(string.Format("Substracting {0} from {1}.", value, _result));
+            WriteToStaticLogger(string.Format("Substracting {0} from {1}.", value, _result));
             _result -= value;
         }
 
@@ -28,12 +31,12 @@
 
         /// <summary>
         /// Encapsulates the call to the StaticLogger in a protected virtual method.
-        /// A TestableCalculator class can now be made (in the UnitTest project) 
-        /// which inherits from this Calculator class and overrides the CallStaticLogger 
-        /// method to break the dependency with the logger.
+        /// A testable class can now be made (in the UnitTest project) which inherits 
+        /// from this Calculator class and overrides the CallStaticLogger method 
+        /// to break the dependency with the logger.
         /// </summary>
         /// <param name="message">Message to log.</param>
-        protected virtual void CallStaticLogger(string message)
+        protected virtual void WriteToStaticLogger(string message)
         {
             StaticLogger.Write(message);
         }
