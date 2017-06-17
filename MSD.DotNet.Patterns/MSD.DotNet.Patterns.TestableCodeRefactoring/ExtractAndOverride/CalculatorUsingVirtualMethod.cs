@@ -3,7 +3,7 @@
     /// <summary>
     /// Calculator class which uses a static Logger class inside a protected virtual method.
     /// </summary>
-    public class Calculator
+    public class CalculatorUsingVirtualMethod
     {
         public decimal Value { get; set; }
 

@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.12
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSD.DotNet.Patterns.TestableCodeRefactoring", "MSD.DotNet.Patterns.TestableCodeRefactoring\MSD.DotNet.Patterns.TestableCodeRefactoring.csproj", "{E0017875-F06A-4EA8-8609-1823A0517CBD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{69A5433A-873F-499A-B913-640622F31CC6}"
@@ -11,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{69A543
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests", "MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests\MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests.csproj", "{D1F35C3F-D7C2-4DD6-92CC-8A37B3882396}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testable code", "Testable code", "{655D494D-1D41-4839-AB41-721A39DC54A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,5 +33,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E0017875-F06A-4EA8-8609-1823A0517CBD} = {655D494D-1D41-4839-AB41-721A39DC54A0}
+		{D1F35C3F-D7C2-4DD6-92CC-8A37B3882396} = {655D494D-1D41-4839-AB41-721A39DC54A0}
 	EndGlobalSection
 EndGlobal

@@ -59,7 +59,7 @@
   <ItemGroup>
     <ProjectReference Include="..\MSD.DotNet.Patterns.TestableCodeRefactoring\MSD.DotNet.Patterns.TestableCodeRefactoring.csproj">
       <Project>{e0017875-f06a-4ea8-8609-1823a0517cbd}</Project>
-      <Name>MSD.DotNet.Patterns.TestableCodePatterns</Name>
+      <Name>MSD.DotNet.Patterns.TestableCodeRefactoring</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
