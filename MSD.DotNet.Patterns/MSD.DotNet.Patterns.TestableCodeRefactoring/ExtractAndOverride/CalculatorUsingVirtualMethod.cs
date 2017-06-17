@@ -1,32 +1,27 @@
-﻿namespace MSD.DotNet.Patterns.TestableCodePatterns.ExtractAndOverride
+﻿namespace MSD.DotNet.Patterns.TestableCodeRefactoring.ExtractAndOverride
 {
     /// <summary>
     /// Calculator class which uses a static Logger class inside a protected virtual method.
     /// </summary>
     public class Calculator
     {
-        private decimal _result;
-        public decimal Result
-        {
-            get { return _result; }
-            set { _result = value; }
-        }
+        public decimal Value { get; set; }
 
         public void Add(decimal value)
         {
-            WriteToStaticLogger(string.Format("Adding {0} to {1}.", value, _result));
-            _result += value;
+            WriteToStaticLogger($"Adding {value} to {Value}.");
+            Value += value;
         }
 
         public void Substract(decimal value)
         {
-            WriteToStaticLogger(string.Format("Substracting {0} from {1}.", value, _result));
-            _result -= value;
+            WriteToStaticLogger($"Substracting {value} from {Value}.");
+            Value -= value;
         }
 
         public void Clear()
         {
-            _result = 0;
+            Value = 0;
         }
 
         /// <summary>

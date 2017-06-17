@@ -17,7 +17,7 @@
             calculator.Add(1);
 
             // Assert
-            Assert.AreEqual(1d, calculator.Result);
+            Assert.AreEqual(1d, calculator.Value);
         }
 
         [Test]
@@ -31,7 +31,7 @@
             calculator.Add(2);
 
             // Assert
-            Assert.AreEqual(3d, calculator.Result);
+            Assert.AreEqual(3d, calculator.Value);
         }
 
         [Test]
@@ -44,7 +44,7 @@
             calculator.Substract(1);
 
             // Assert
-            Assert.AreEqual(-1d, calculator.Result);
+            Assert.AreEqual(-1d, calculator.Value);
         }
 
         [Test]
@@ -58,7 +58,7 @@
             calculator.Substract(2);
 
             // Assert
-            Assert.AreEqual(1d, calculator.Result);
+            Assert.AreEqual(1d, calculator.Value);
         }
 
         [Test]
@@ -73,7 +73,7 @@
             calculator.Clear();
 
             // Assert
-            Assert.AreEqual(0d, calculator.Result);
+            Assert.AreEqual(0d, calculator.Value);
         }
 
         private TestableCalculator GetTestableCalculator()

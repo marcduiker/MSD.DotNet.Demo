@@ -1,15 +1,20 @@
-﻿namespace MSD.DotNet.Patterns.TestableCodePatterns.FakingWithInterfaces
-{
-    using System;
+﻿using System;
+using System.Configuration;
+using System.IO;
 
+namespace MSD.DotNet.Patterns.TestableCodeRefactoring.FakingWithInterfaces
+{
     /// <summary>
     /// Logger class which implements the ILogger interface.
     /// </summary>
     public class Logger : ILogger
     {
-        public void Write(string message)
+        public async void Write(string message)
         {
-            Console.WriteLine(message);
+            using (StreamWriter writer = File.AppendText(ConfigurationManager.AppSettings["Logger.FilePath"]))
+            {
+                await writer.WriteLineAsync($"{DateTime.UtcNow.ToLongDateString()} - {message}");
+            }
         }
     }
 }

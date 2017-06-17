@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -39,7 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExtractAndOverride\Calculator.cs" />
+    <Compile Include="ExtractAndOverride\CalculatorUsingStaticClass.cs" />
+    <Compile Include="ExtractAndOverride\CalculatorUsingVirtualMethod.cs" />
     <Compile Include="FakingWithInterfaces\Calculator.cs" />
     <Compile Include="FakingWithInterfaces\ILogger.cs" />
     <Compile Include="FakingWithInterfaces\Logger.cs" />

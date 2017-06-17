@@ -1,7 +1,9 @@
-﻿namespace MSD.DotNet.Patterns.TestableCodePatterns.ExtractAndOverride
-{
-    using System;
+﻿using System;
+using System.Configuration;
+using System.IO;
 
+namespace MSD.DotNet.Patterns.TestableCodeRefactoring.ExtractAndOverride
+{
     /// <summary>
     /// Static logger class, exists only for demonstration purposes.
     /// The idea is that calls to this class should be prevented in unit tests
@@ -10,9 +12,12 @@
     /// </summary>
     public static class StaticLogger
     {
-        public static void Write(string message)
+        public static async void Write(string message)
         {
-            Console.WriteLine(message);
+            using (StreamWriter writer = File.AppendText(ConfigurationManager.AppSettings["Logger.FilePath"]))
+            {
+                await writer.WriteLineAsync($"{DateTime.UtcNow.ToLongDateString()} - {message}");
+            }
         }
     }
 }

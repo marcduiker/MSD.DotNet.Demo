@@ -1,4 +1,4 @@
-﻿namespace MSD.DotNet.Patterns.TestableCodePatterns.FakingWithInterfaces
+﻿namespace MSD.DotNet.Patterns.TestableCodeRefactoring.FakingWithInterfaces
 {
     public interface ILogger
     {

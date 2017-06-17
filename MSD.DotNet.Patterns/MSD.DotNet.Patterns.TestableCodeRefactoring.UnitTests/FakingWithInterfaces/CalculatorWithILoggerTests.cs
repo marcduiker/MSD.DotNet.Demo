@@ -1,7 +1,8 @@
-﻿namespace MSD.DotNet.Patterns.TestableCodePatterns.UnitTests.FakingWithInterfaces
+﻿using MSD.DotNet.Patterns.TestableCodeRefactoring.FakingWithInterfaces;
+
+namespace MSD.DotNet.Patterns.TestableCodePatterns.UnitTests.FakingWithInterfaces
 {
     using FakeItEasy;
-    using MSD.DotNet.Patterns.TestableCodePatterns.FakingWithInterfaces;
     using NUnit.Framework;
 
     /// <summary>

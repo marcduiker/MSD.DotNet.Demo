@@ -1,7 +1,7 @@
-﻿namespace MSD.DotNet.Patterns.TestableCodePatterns.UnitTests.ExtractAndOverride
-{
-    using MSD.DotNet.Patterns.TestableCodePatterns.ExtractAndOverride;
+﻿using MSD.DotNet.Patterns.TestableCodeRefactoring.ExtractAndOverride;
 
+namespace MSD.DotNet.Patterns.TestableCodePatterns.UnitTests.ExtractAndOverride
+{
     /// <summary>
     /// A testable class of the Calculator which overrides the call to the static logger component.
     /// This class is used in the unit tests instead of the CalculatorWithStaticLogger class.

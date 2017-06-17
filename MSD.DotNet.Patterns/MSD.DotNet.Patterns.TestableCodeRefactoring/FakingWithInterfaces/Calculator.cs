@@ -1,4 +1,4 @@
-﻿namespace MSD.DotNet.Patterns.TestableCodePatterns.FakingWithInterfaces
+﻿namespace MSD.DotNet.Patterns.TestableCodeRefactoring.FakingWithInterfaces
 {
     /// <summary>
     /// Calculator class which uses the ILogger interface through constructor injection.
@@ -6,35 +6,30 @@
     public class Calculator
     {
         private readonly ILogger _logger;
-        private decimal _result;
 
         public Calculator(ILogger logger)
         {
             _logger = logger;
         }
 
-        public decimal Result
-        {
-            get { return _result; }
-            set { _result = value; }
-        }
+        public decimal Result { get; set; }
 
         public void Add(decimal value)
         {
-            _logger.Write(string.Format("Adding {0} to {1}.", value, _result));
-            _result += value;
+            _logger.Write($"Adding {value} to {Result}.");
+            Result += value;
         }
 
         public void Substract(decimal value)
         {
-            _logger.Write(string.Format("Substracting {0} from {1}.", value, _result));
-            _result -= value;
+            _logger.Write($"Substracting {value} from {Result}.");
+            Result -= value;
         }
 
         public void Clear()
         {
             _logger.Write("Clear result.");
-            _result = 0;
+            Result = 0;
         }
     }
 }
