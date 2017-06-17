@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests.Basic
 {
     /// <summary>
-    /// Class with unit tests for the Calculator which uses the StaticLogger.
+    /// Class with unit tests for the basic Calculator without dependencies.
     /// </summary>
     public class CalculatorTests
     {
