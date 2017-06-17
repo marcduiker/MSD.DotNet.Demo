@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Basic\Calculator.cs" />
     <Compile Include="ExtractAndOverride\CalculatorUsingStaticClass.cs" />
     <Compile Include="ExtractAndOverride\CalculatorUsingVirtualMethod.cs" />
     <Compile Include="FakingWithInterfaces\Calculator.cs" />
