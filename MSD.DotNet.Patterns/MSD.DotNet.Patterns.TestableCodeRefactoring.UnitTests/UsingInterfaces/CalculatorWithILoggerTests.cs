@@ -1,10 +1,9 @@
-﻿using MSD.DotNet.Patterns.TestableCodeRefactoring.FakingWithInterfaces;
+﻿using FakeItEasy;
+using MSD.DotNet.Patterns.TestableCodeRefactoring.UsingInterfaces;
+using NUnit.Framework;
 
-namespace MSD.DotNet.Patterns.TestableCodePatterns.UnitTests.FakingWithInterfaces
+namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests.UsingInterfaces
 {
-    using FakeItEasy;
-    using NUnit.Framework;
-
     /// <summary>
     /// Class with unit tests for the Calculator which uses the ILogger interface.
     /// Modify the GetCalculator method to either return a handcoded FakeLogger 

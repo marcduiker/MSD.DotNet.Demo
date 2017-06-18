@@ -2,7 +2,7 @@
 using System.Configuration;
 using System.IO;
 
-namespace MSD.DotNet.Patterns.TestableCodeRefactoring.FakingWithInterfaces
+namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UsingInterfaces
 {
     /// <summary>
     /// Logger class which implements the ILogger interface.

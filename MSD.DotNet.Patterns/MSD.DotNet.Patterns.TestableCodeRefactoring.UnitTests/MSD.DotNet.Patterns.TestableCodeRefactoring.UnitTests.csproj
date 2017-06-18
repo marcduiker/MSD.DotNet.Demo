@@ -57,8 +57,8 @@
     <Compile Include="Basic\CalculatorTests.cs" />
     <Compile Include="ExtractAndOverride\CalculatorWithStaticLoggerTests.cs" />
     <Compile Include="ExtractAndOverride\TestableCalculator.cs" />
-    <Compile Include="FakingWithInterfaces\CalculatorWithILoggerTests.cs" />
-    <Compile Include="FakingWithInterfaces\FakeLogger.cs" />
+    <Compile Include="UsingInterfaces\CalculatorWithILoggerTests.cs" />
+    <Compile Include="UsingInterfaces\FakeLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +69,9 @@
       <Project>{e0017875-f06a-4ea8-8609-1823a0517cbd}</Project>
       <Name>MSD.DotNet.Patterns.TestableCodeRefactoring</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UsingMockFramework\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

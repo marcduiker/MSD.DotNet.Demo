@@ -1,4 +1,4 @@
-﻿namespace MSD.DotNet.Patterns.TestableCodeRefactoring.FakingWithInterfaces
+﻿namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UsingInterfaces
 {
     /// <summary>
     /// Calculator class which uses the ILogger interface through constructor injection.

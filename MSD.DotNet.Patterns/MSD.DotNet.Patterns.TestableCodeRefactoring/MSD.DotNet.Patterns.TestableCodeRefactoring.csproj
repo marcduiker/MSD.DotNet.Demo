@@ -43,11 +43,17 @@
     <Compile Include="Basic\Calculator.cs" />
     <Compile Include="ExtractAndOverride\CalculatorUsingStaticClass.cs" />
     <Compile Include="ExtractAndOverride\CalculatorUsingVirtualMethod.cs" />
-    <Compile Include="FakingWithInterfaces\Calculator.cs" />
-    <Compile Include="FakingWithInterfaces\ILogger.cs" />
-    <Compile Include="FakingWithInterfaces\Logger.cs" />
+    <Compile Include="UsingInterfaces\Calculator.cs" />
+    <Compile Include="UsingInterfaces\ILogger.cs" />
+    <Compile Include="UsingInterfaces\Logger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ExtractAndOverride\StaticLogger.cs" />
+    <Compile Include="UsingMockFramework\IUserRepository.cs" />
+    <Compile Include="UsingMockFramework\NotFoundUser.cs" />
+    <Compile Include="UsingMockFramework\User.cs" />
+    <Compile Include="UsingMockFramework\UserAddedEventArgs.cs" />
+    <Compile Include="UsingMockFramework\UserRepository.cs" />
+    <Compile Include="UsingMockFramework\RegistrationService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
