@@ -1,7 +1,6 @@
 ﻿using FluentAssertions;
 using MSD.DotNet.Patterns.TestableCodeRefactoring.UsingSitecore;
 using NUnit.Framework;
-using Sitecore.FakeDb;
 
 namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests.UsingSitecore
 {
@@ -15,7 +14,6 @@ namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests.UsingSitecore
             var newsItemService = new NewsItemService();
             using (var db = FakeDbFactory.CreateDbWithoutNewsRoot())
             {
-
                 // Act
                 var result = newsItemService.GetNewsItems();
 
@@ -29,7 +27,7 @@ namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests.UsingSitecore
         {
             // Arrange
             var newsItemService = new NewsItemService();
-            using (var db = FakeDbFactory.CreateDbWithNewsRoot())
+            using (var db = FakeDbFactory.CreateDbWithNewsRootAndWithoutNewsItems())
             {
 
                 // Act
@@ -37,6 +35,21 @@ namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests.UsingSitecore
 
                 // Assert
                 result.Should().BeEmpty();
+            }
+        }
+
+        [Test]
+        public void GetNewsItems_WithValidNewsRootAndNewsItems_ReturnsNewsItems()
+        {
+            // Arrange
+            var newsItemService = new NewsItemService();
+            using (var db = FakeDbFactory.CreateDbWithNewsRootAndWithNewsItems())
+            {
+                // Act
+                var result = newsItemService.GetNewsItems();
+
+                // Assert
+                result.Should().NotBeEmpty();
             }
         }
     }
