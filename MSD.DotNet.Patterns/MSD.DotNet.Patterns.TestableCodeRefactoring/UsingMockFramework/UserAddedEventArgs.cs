@@ -1,4 +1,5 @@
 ﻿using System;
+using MSD.DotNet.Patterns.TestableCodeRefactoring.UsingMockFramework.Users;
 
 namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UsingMockFramework
 {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UsingMockFramework
+namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UsingMockFramework.Users
 {
     public class User
     {

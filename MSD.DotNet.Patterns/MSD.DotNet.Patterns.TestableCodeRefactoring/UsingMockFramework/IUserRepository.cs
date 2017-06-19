@@ -1,4 +1,5 @@
 using System;
+using MSD.DotNet.Patterns.TestableCodeRefactoring.UsingMockFramework.Users;
 
 namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UsingMockFramework
 {
@@ -6,8 +7,13 @@ namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UsingMockFramework
     {
         event EventHandler<UserAddedEventArgs> UserAdded;
 
-        User Get(string name);
+        User Get(string email);
 
-        User Add(User user);
+        NewUser Add(
+            string name,
+            string email,
+            DateTime dateOfBirth);
+
+        bool IsKnownUser(string email);
     }
 }

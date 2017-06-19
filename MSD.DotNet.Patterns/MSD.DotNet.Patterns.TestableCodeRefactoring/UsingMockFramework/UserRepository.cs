@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using MSD.DotNet.Patterns.TestableCodeRefactoring.UsingMockFramework.Users;
 
 namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UsingMockFramework
 {
     /// <summary>
-    /// Assume this repository communicates to another system we have no control over, such as a database or a service.
+    /// Assume this repository communicates to another system we have no control over, such as a database which contains all the users.
     /// </summary>
     public class UserRepository : IUserRepository
     {
@@ -38,19 +39,29 @@ namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UsingMockFramework
             return new NotFoundUser();
         }
 
-        public User Add(User user)
+        public NewUser Add(
+            string name,
+            string email,
+            DateTime dateOfBirth)
         {
+            var newUser = new NewUser(
+                name,
+                email,
+                dateOfBirth)
+            { Id = Guid.NewGuid() };
 
-            var addedPerson = new User(
-                user.Name,
-                user.Email,
-                user.DateOfBirth)
-            { Id = Guid.NewGuid()};
+            _userDictionary.Add(newUser.Email, newUser);
+            var userAddedEventArgs = new UserAddedEventArgs {User = newUser};
+            OnUserAdded(userAddedEventArgs);
 
-            var personAddedEventArgs = new UserAddedEventArgs {User = addedPerson};
-            OnUserAdded(personAddedEventArgs);
+            return newUser;
+        }
 
-            return addedPerson;
+        public bool IsKnownUser(string email)
+        {
+            User knownUser;
+
+            return _userDictionary.TryGetValue(email, out knownUser);
         }
 
         private static Dictionary<string, User> CreateUserDictionary()
