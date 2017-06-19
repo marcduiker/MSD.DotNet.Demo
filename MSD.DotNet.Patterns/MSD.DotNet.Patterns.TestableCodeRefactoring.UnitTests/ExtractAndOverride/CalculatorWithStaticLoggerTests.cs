@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
+using NUnit.Framework;
 
 namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests.ExtractAndOverride
 {
@@ -17,7 +18,7 @@ namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests.ExtractAndOverri
             calculator.Add(1);
 
             // Assert
-            Assert.AreEqual(1d, calculator.Value);
+            calculator.Value.Should().Be(1);
         }
 
         [Test]
@@ -31,7 +32,7 @@ namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests.ExtractAndOverri
             calculator.Add(2);
 
             // Assert
-            Assert.AreEqual(3d, calculator.Value);
+            calculator.Value.Should().Be(3);
         }
 
         [Test]
@@ -44,7 +45,7 @@ namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests.ExtractAndOverri
             calculator.Substract(1);
 
             // Assert
-            Assert.AreEqual(-1d, calculator.Value);
+            calculator.Value.Should().Be(-1);
         }
 
         [Test]
@@ -58,7 +59,7 @@ namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests.ExtractAndOverri
             calculator.Substract(2);
 
             // Assert
-            Assert.AreEqual(1d, calculator.Value);
+            calculator.Value.Should().Be(1);
         }
 
         [Test]
@@ -73,12 +74,12 @@ namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests.ExtractAndOverri
             calculator.Clear();
 
             // Assert
-            Assert.AreEqual(0d, calculator.Value);
+            calculator.Value.Should().Be(0);
         }
 
-        private TestableCalculator GetTestableCalculator()
+        private static TestableCalculatorUsingVirtualMethod GetTestableCalculator()
         {
-            return new TestableCalculator();
+            return new TestableCalculatorUsingVirtualMethod();
         }
     }
 }

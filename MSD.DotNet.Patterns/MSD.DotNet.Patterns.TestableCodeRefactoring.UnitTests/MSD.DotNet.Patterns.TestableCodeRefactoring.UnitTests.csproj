@@ -151,6 +151,7 @@
     <Compile Include="UsingInterfaces\CalculatorWithILoggerTests.cs" />
     <Compile Include="UsingInterfaces\FakeLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsingMockFramework\CalculatorWithMockFrameworkTests.cs" />
     <Compile Include="UsingMockFramework\RegistrationServiceTests.cs" />
     <Compile Include="UsingMockFramework\UserRepositoryFactory.cs" />
     <Compile Include="UsingSitecore\FakeDbFactory.cs" />

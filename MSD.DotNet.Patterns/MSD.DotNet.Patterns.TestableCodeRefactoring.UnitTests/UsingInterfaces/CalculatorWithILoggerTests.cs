@@ -1,4 +1,5 @@
 ﻿using FakeItEasy;
+using FluentAssertions;
 using MSD.DotNet.Patterns.TestableCodeRefactoring.UsingInterfaces;
 using NUnit.Framework;
 
@@ -22,7 +23,7 @@ namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests.UsingInterfaces
             calculator.Add(1);
 
             // Assert
-            Assert.AreEqual(1d, calculator.Result);
+            calculator.Result.Should().Be(1);
         }
 
         [Test]
@@ -36,7 +37,7 @@ namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests.UsingInterfaces
             calculator.Add(2);
 
             // Assert
-            Assert.AreEqual(3d, calculator.Result);
+            calculator.Result.Should().Be(3);
         }
 
         [Test]
@@ -49,7 +50,7 @@ namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests.UsingInterfaces
             calculator.Substract(1);
 
             // Assert
-            Assert.AreEqual(-1d, calculator.Result);
+            calculator.Result.Should().Be(-1);
         }
 
         [Test]
@@ -63,7 +64,7 @@ namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests.UsingInterfaces
             calculator.Substract(2);
 
             // Assert
-            Assert.AreEqual(1d, calculator.Result);
+            calculator.Result.Should().Be(1);
         }
 
         [Test]
@@ -78,40 +79,12 @@ namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests.UsingInterfaces
             calculator.Clear();
 
             // Assert
-            Assert.AreEqual(0d, calculator.Result);
+            calculator.Result.Should().Be(0);
         }
 
-        [Test]
-        public void WriteToLog_WhenAddingANumber_WriteToLogMustHaveHappened()
-        {
-            // Arrange
-            ILogger fakeLogger = A.Fake<ILogger>();
-            var calculator = new Calculator(fakeLogger);
-
-            // Act
-            calculator.Add(1);
-
-            // Assert
-            A.CallTo(() => fakeLogger.Write(A<string>.Ignored)).MustHaveHappened(Repeated.Exactly.Once);
-        }
-
-        private Calculator GetCalculator()
-        {
-            #region using a handcoded fake
-
-            // ILogger fakeLogger = new FakeLogger();
-
-            #endregion
-
-            #region using FakeItEasy
-
-            ILogger fakeLogger = A.Fake<ILogger>();
-
-            #endregion
-
-            return new Calculator(fakeLogger);
-
-
+        private static Calculator GetCalculator()
+        {           
+           return new Calculator(new FakeLogger());
         }
     }
 }

@@ -18,7 +18,7 @@ namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests.Basic
             calculator.Add(1);
 
             // Assert
-            Assert.AreEqual(1d, calculator.Value);
+            Assert.AreEqual(1, calculator.Value);
         }
 
         [Test]
@@ -32,7 +32,7 @@ namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests.Basic
             calculator.Add(2);
 
             // Assert
-            Assert.AreEqual(3d, calculator.Value);
+            Assert.AreEqual(3, calculator.Value);
         }
 
         [Test]
@@ -45,7 +45,7 @@ namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests.Basic
             calculator.Substract(1);
 
             // Assert
-            Assert.AreEqual(-1d, calculator.Value);
+            Assert.AreEqual(-1, calculator.Value);
         }
 
         [Test]
@@ -59,7 +59,7 @@ namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests.Basic
             calculator.Substract(2);
 
             // Assert
-            Assert.AreEqual(1d, calculator.Value);
+            Assert.AreEqual(1, calculator.Value);
         }
 
         [Test]
@@ -74,7 +74,7 @@ namespace MSD.DotNet.Patterns.TestableCodeRefactoring.UnitTests.Basic
             calculator.Clear();
 
             // Assert
-            Assert.AreEqual(0d, calculator.Value);
+            Assert.AreEqual(0, calculator.Value);
         }
 
         private static Calculator GetCalculator()
